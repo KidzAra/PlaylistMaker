@@ -1,38 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingTop="@dimen/settings_button_linear_layout">
+        android:paddingTop="@dimen/settings_button_linear_layout"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/settings_button_linear_layout"
             android:orientation="horizontal">
+
             <FrameLayout
                 android:layout_width="0dp"
-                android:layout_weight="10"
                 android:layout_height="match_parent"
-                >
+                android:layout_weight="10">
 
-                <Button
+                <FrameLayout
+                    android:id="@+id/dark_theme_button"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/white"
-                    android:gravity="center_vertical"
-                    android:text="@string/dark_theme"
-                    android:textColor="@color/black">
-                </Button>
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:padding="15dp"
+                        android:text="@string/dark_theme"
+                        android:textSize="@dimen/ui_button_text">
+
+                    </TextView>
+
+                </FrameLayout>
+
             </FrameLayout>
 
             <FrameLayout
                 android:layout_width="0dp"
-                android:layout_weight="2"
                 android:layout_height="match_parent"
-                >
+                android:layout_weight="2">
+
                 <Switch
                     android:layout_width="60dp"
                     android:layout_height="match_parent"
@@ -43,72 +57,38 @@
 
         </LinearLayout>
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:orientation="horizontal">
+
             <FrameLayout
                 android:layout_width="0dp"
-                android:layout_weight="10"
                 android:layout_height="match_parent"
-                >
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/white"
-                    android:gravity="center_vertical"
+                android:layout_weight="10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:padding="15dp"
                     android:text="@string/share_app"
-                    android:textColor="@color/black">
-                </Button>
+                    android:textSize="@dimen/ui_button_text"></TextView>
+
+
             </FrameLayout>
 
             <FrameLayout
                 android:layout_width="0dp"
-                android:layout_weight="2"
                 android:layout_height="match_parent"
-                >
+                android:layout_weight="2">
+
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/share_icon"
-                    android:padding="25dp">
-
-                </ImageView>
-            </FrameLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/settings_button_linear_layout"
-            android:orientation="horizontal">
-            <FrameLayout
-                android:layout_width="0dp"
-                android:layout_weight="10"
-                android:layout_height="match_parent"
-                >
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/white"
-                    android:gravity="center_vertical"
-                    android:text="@string/support"
-                    android:textColor="@color/black">
-                </Button>
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="0dp"
-                android:layout_weight="2"
-                android:layout_height="match_parent"
-                >
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/support_icon"
-                    android:padding="25dp">
-                </ImageView>
+                    android:padding="25dp"
+                    android:src="@drawable/share_icon"></ImageView>
             </FrameLayout>
 
         </LinearLayout>
@@ -117,35 +97,73 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:orientation="horizontal">
+
             <FrameLayout
                 android:layout_width="0dp"
-                android:layout_weight="10"
                 android:layout_height="match_parent"
-                >
+                android:layout_weight="10">
 
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/white"
-                    android:gravity="center_vertical"
-                    android:text="@string/tos"
-                    android:textColor="@color/black" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:padding="15dp"
+                    android:text="@string/support"
+                    android:textSize="@dimen/ui_button_text"></TextView>
+
+
             </FrameLayout>
 
             <FrameLayout
                 android:layout_width="0dp"
-                android:layout_weight="2"
                 android:layout_height="match_parent"
-                >
+                android:layout_weight="2">
+
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/arrow_forward"
-                    android:padding="25dp">
-                </ImageView>
+                    android:padding="25dp"
+                    android:src="@drawable/support_icon"></ImageView>
             </FrameLayout>
 
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:padding="15dp"
+                    android:text="@string/tos"
+                    android:textSize="@dimen/ui_button_text">
+                </TextView>
+
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="25dp"
+                    android:src="@drawable/arrow_forward"></ImageView>
+            </FrameLayout>
+
+        </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
@@ -153,12 +171,16 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/settings_button_linear_layout"
         android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         >
 
         <FrameLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="2">
+            android:layout_weight="2"
+            android:id="@+id/settings_back_button">
 
             <ImageView
                 android:layout_width="match_parent"
