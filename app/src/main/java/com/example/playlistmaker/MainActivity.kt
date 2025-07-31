@@ -1,47 +1,41 @@
 package com.example.playlistmaker
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.playlistmaker.ui.theme.PlaylistMakerTheme
+import android.widget.ImageView
+import android.view.View
+import android.widget.LinearLayout
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            PlaylistMakerTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+        setContentView(R.layout.activity_main)
+
+        val search_button = findViewById<LinearLayout>(R.id.search_button)
+
+        val searchButtonClickListener: View.OnClickListener = object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                val intent = Intent(this@MainActivity, Search::class.java)
+                startActivity(intent)
             }
         }
-    }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+        search_button.setOnClickListener(searchButtonClickListener)
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    PlaylistMakerTheme {
-        Greeting("Android")
+        val music_library_button = findViewById<LinearLayout>(R.id.music_library_button)
+
+        music_library_button.setOnClickListener {
+            val intent = Intent(this, MusicLibrary::class.java)
+            startActivity(intent)
+        }
+
+        val settings_button = findViewById<LinearLayout>(R.id.settings_button)
+
+        settings_button.setOnClickListener {
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
